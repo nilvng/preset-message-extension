@@ -7,12 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C56F882D290377B300A389CA /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C56F882C290377B300A389CA /* MainInterface.storyboard */; };
+		C56F882F290386C600A389CA /* PresetMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56F882E290386C600A389CA /* PresetMessage.swift */; };
+		C56F88312903899200A389CA /* PresetMessage+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56F88302903899200A389CA /* PresetMessage+UIImage.swift */; };
 		C5C30A5B2901613D00059650 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5C30A5A2901613D00059650 /* Assets.xcassets */; };
 		C5C30A612901613D00059650 /* Message-Preset MessagesExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C5C30A602901613D00059650 /* Message-Preset MessagesExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C5C30A662901613D00059650 /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5C30A652901613D00059650 /* Messages.framework */; };
 		C5C30A692901613D00059650 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C30A682901613D00059650 /* MessagesViewController.swift */; };
-		C5C30A6C2901613D00059650 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5C30A6A2901613D00059650 /* MainInterface.storyboard */; };
 		C5C30A6E2901613D00059650 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5C30A6D2901613D00059650 /* Assets.xcassets */; };
+		C5C30A7A2902303100059650 /* PresetMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C30A792902303100059650 /* PresetMessageViewController.swift */; };
+		C5C30A7C2902313600059650 /* PresetMessageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C30A7B2902313600059650 /* PresetMessageStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,14 +44,18 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C56F882C290377B300A389CA /* MainInterface.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
+		C56F882E290386C600A389CA /* PresetMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetMessage.swift; sourceTree = "<group>"; };
+		C56F88302903899200A389CA /* PresetMessage+UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PresetMessage+UIImage.swift"; sourceTree = "<group>"; };
 		C5C30A572901613B00059650 /* Message-Preset.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Message-Preset.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5C30A5A2901613D00059650 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C5C30A602901613D00059650 /* Message-Preset MessagesExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Message-Preset MessagesExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5C30A652901613D00059650 /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
 		C5C30A682901613D00059650 /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
-		C5C30A6B2901613D00059650 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		C5C30A6D2901613D00059650 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C5C30A6F2901613D00059650 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C5C30A792902303100059650 /* PresetMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetMessageViewController.swift; sourceTree = "<group>"; };
+		C5C30A7B2902313600059650 /* PresetMessageStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetMessageStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,9 +109,13 @@
 			isa = PBXGroup;
 			children = (
 				C5C30A682901613D00059650 /* MessagesViewController.swift */,
-				C5C30A6A2901613D00059650 /* MainInterface.storyboard */,
 				C5C30A6D2901613D00059650 /* Assets.xcassets */,
 				C5C30A6F2901613D00059650 /* Info.plist */,
+				C5C30A792902303100059650 /* PresetMessageViewController.swift */,
+				C5C30A7B2902313600059650 /* PresetMessageStore.swift */,
+				C56F882C290377B300A389CA /* MainInterface.storyboard */,
+				C56F882E290386C600A389CA /* PresetMessage.swift */,
+				C56F88302903899200A389CA /* PresetMessage+UIImage.swift */,
 			);
 			path = "Message-Preset MessagesExtension";
 			sourceTree = "<group>";
@@ -157,6 +169,7 @@
 				TargetAttributes = {
 					C5C30A562901613B00059650 = {
 						CreatedOnToolsVersion = 13.4.1;
+						LastSwiftMigration = 1340;
 					};
 					C5C30A5F2901613D00059650 = {
 						CreatedOnToolsVersion = 13.4.1;
@@ -196,7 +209,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C5C30A6E2901613D00059650 /* Assets.xcassets in Resources */,
-				C5C30A6C2901613D00059650 /* MainInterface.storyboard in Resources */,
+				C56F882D290377B300A389CA /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,6 +221,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C5C30A692901613D00059650 /* MessagesViewController.swift in Sources */,
+				C5C30A7C2902313600059650 /* PresetMessageStore.swift in Sources */,
+				C56F882F290386C600A389CA /* PresetMessage.swift in Sources */,
+				C56F88312903899200A389CA /* PresetMessage+UIImage.swift in Sources */,
+				C5C30A7A2902303100059650 /* PresetMessageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,17 +237,6 @@
 			targetProxy = C5C30A622901613D00059650 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		C5C30A6A2901613D00059650 /* MainInterface.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C5C30A6B2901613D00059650 /* Base */,
-			);
-			name = MainInterface.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		C5C30A702901613D00059650 /* Debug */ = {
@@ -402,16 +408,23 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "blinq.challenge.Message-Preset";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -422,12 +435,18 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "blinq.challenge.Message-Preset";
 				PRODUCT_NAME = "$(TARGET_NAME)";

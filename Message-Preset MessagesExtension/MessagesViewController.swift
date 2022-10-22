@@ -12,6 +12,8 @@ class MessagesViewController: MSMessagesAppViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print("up")
         // Do any additional setup after loading the view.
     }
     
@@ -53,14 +55,85 @@ class MessagesViewController: MSMessagesAppViewController {
     
     override func willTransition(to presentationStyle: MSMessagesAppPresentationStyle) {
         // Called before the extension transitions to a new presentation style.
-    
-        // Use this method to prepare for the change in presentation style.
+        super.willTransition(to: presentationStyle)
+        
+        removeAllChildViewControllers()
     }
     
     override func didTransition(to presentationStyle: MSMessagesAppPresentationStyle) {
         // Called after the extension transitions to a new presentation style.
+        super.didTransition(to: presentationStyle)
+        
+        guard let conversation = activeConversation else { fatalError("Expected an active converstation") }
+        presentViewController(for: conversation, with: presentationStyle)
+    }
+    private func presentViewController(for conversation: MSConversation, with presentationStyle: MSMessagesAppPresentationStyle) {
+        // Remove any child view controllers that have been presented.
+        removeAllChildViewControllers()
+        
+        let controller: UIViewController = instantiatePresetMessageViewController()
+
+        addChild(controller)
+        controller.view.frame = view.bounds
+        controller.view.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(controller.view)
+        
+        NSLayoutConstraint.activate([
+            controller.view.leftAnchor.constraint(equalTo: view.leftAnchor),
+            controller.view.rightAnchor.constraint(equalTo: view.rightAnchor),
+            controller.view.topAnchor.constraint(equalTo: view.topAnchor),
+            controller.view.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            ])
+        
+        controller.didMove(toParent: self)
+    }
+    // MARK: Convenience
     
-        // Use this method to finalize any behaviors associated with the change in presentation style.
+    private func removeAllChildViewControllers() {
+        for child in children {
+            child.willMove(toParent: nil)
+            child.view.removeFromSuperview()
+            child.removeFromParent()
+        }
+    }
+    
+    func instantiatePresetMessageViewController() -> UIViewController{
+        let controller = PresetMessageViewController()
+        controller.delegate = self
+        return controller
+    }
+    /// - Tag: ComposeMessage
+    fileprivate func composeMessage(with presetMessage: PresetMessage, caption: String, session: MSSession? = nil) -> MSMessage {
+        var components = URLComponents()
+        components.queryItems = presetMessage.queryItems
+        
+        let layout = MSMessageTemplateLayout()
+        layout.image = presetMessage.renderMessageImage(opaque: true)
+        layout.caption = caption
+
+        let message = MSMessage(session: session ?? MSSession())
+        message.url = components.url!
+        message.layout = layout
+        
+        return message
     }
 
+}
+
+extension MessagesViewController : PresetMessageViewControllerDelegate{
+    func messageDidSelect(message: PresetMessage) {
+        guard let conversation = activeConversation else { fatalError("Expected a conversation") }
+
+        let message = composeMessage(with: message, caption: "", session: conversation.selectedMessage?.session)
+
+        // Add the message to the conversation.
+        conversation.send(message) { error in
+            if let error = error {
+                print(error)
+            }
+        }
+        dismiss()
+    }
+    
+    
 }
