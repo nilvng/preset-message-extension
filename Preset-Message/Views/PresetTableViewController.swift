@@ -9,18 +9,21 @@ import UIKit
 
 class PresetTableViewController: UITableViewController {
 
+    var cellID = "presetCell"
     var items : [PresetMessageViewModel] = []
     lazy var presenter  = Presenter(store: PresetMessageSQLStore(), view: self)
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         navigationItem.rightBarButtonItem = editButtonItem
         navigationItem.title = "Preset Messages"
         navigationController?.navigationBar.prefersLargeTitles = true
-        
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "presetCell")
-        tableView.register(InputTableViewCell.self, forCellReuseIdentifier: "inputCell")
-        
+
+        tableView.register(UITableViewCell.self,
+                           forCellReuseIdentifier: self.cellID)
+        tableView.register(TextInputTableHeaderView.self,
+                           forHeaderFooterViewReuseIdentifier: TextInputTableHeaderView.identifier)
         populateData()
     }
     
@@ -43,26 +46,23 @@ class PresetTableViewController: UITableViewController {
         1
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        items.count + 1
+        items.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        if indexPath.item == 0, let cell = tableView.dequeueReusableCell(withIdentifier: "inputCell", for: indexPath) as? InputTableViewCell{
-            cell.delegate = self
-            return cell
-        }
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "presetCell", for: indexPath)
+  
+        let cell = tableView.dequeueReusableCell(withIdentifier: self.cellID, for: indexPath)
 
-        cell.textLabel!.text = items[indexPath.item - 1].text
+        cell.textLabel?.text = items[indexPath.item].text
+        cell.textLabel?.numberOfLines = -1
+        
         return cell
     }
     
 //- MARK: Table View Delegate
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         /// TODO: update preset
-        let m = items[indexPath.item - 1]
+        let m = items[indexPath.item]
         let editVC = PresetEditViewController()
         editVC.configure(preset: m)
         editVC.delegate = self
@@ -71,10 +71,16 @@ class PresetTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            let p = self.items[indexPath.item - 1]
+            let p = self.items[indexPath.item]
             self.tableDelete(indexPath: indexPath)
             self.presenter.deletePreset(p)
         }
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let inputView =  TextInputTableHeaderView()
+        inputView.delegate = self
+        return inputView
     }
 
 }
@@ -104,7 +110,7 @@ extension PresetTableViewController {
     }
     
     func tableDelete(indexPath: IndexPath){
-        self.items.remove(at: indexPath.item - 1)
+        self.items.remove(at: indexPath.item)
         self.tableView.deleteRows(at: [indexPath], with: .automatic)
     }
 }

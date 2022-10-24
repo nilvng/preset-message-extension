@@ -17,9 +17,11 @@ class PresetEditViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = "Preset Messages"
         view.backgroundColor = .systemBackground
+        
         setupTextField()
-        // Do any additional setup after loading the view.
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -35,7 +37,6 @@ class PresetEditViewController: UIViewController {
             textField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20.0),
             textField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20.0),
             textField.topAnchor.constraint(equalTo: view.topAnchor, constant: 100.0),
-//            textField.bottomAnchor.constraint(equalTo: view.bottomAnchor)
             ])
     }
     
@@ -46,7 +47,7 @@ class PresetEditViewController: UIViewController {
 
 
 }
-
+// MARK: TextFieldDelegate
 extension PresetEditViewController : UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         guard let text = textField.text, text != " " else {

@@ -13,11 +13,11 @@
 		C5351B482906253D00F4475C /* PresetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5351B472906253D00F4475C /* PresetManager.swift */; };
 		C5351B4A290626B600F4475C /* PresetMessageSQL.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5351B49290626B600F4475C /* PresetMessageSQL.swift */; };
 		C5351B4B290626C100F4475C /* PresetMessageSQL.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5351B49290626B600F4475C /* PresetMessageSQL.swift */; };
+		C5351B52290668B300F4475C /* PresetMessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56F88D92904103A00A389CA /* PresetMessageViewModel.swift */; };
 		C54B44E52905F257003B587E /* PresetMessageSQLStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C54B44E42905F257003B587E /* PresetMessageSQLStore.swift */; };
 		C56F88802903FB2800A389CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56F887F2903FB2800A389CA /* AppDelegate.swift */; };
 		C56F88822903FB2800A389CA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56F88812903FB2800A389CA /* SceneDelegate.swift */; };
 		C56F88842903FB2800A389CA /* PresetTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56F88832903FB2800A389CA /* PresetTableViewController.swift */; };
-		C56F88872903FB2800A389CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C56F88852903FB2800A389CA /* Main.storyboard */; };
 		C56F888C2903FB2800A389CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C56F888B2903FB2800A389CA /* Assets.xcassets */; };
 		C56F888F2903FB2800A389CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C56F888D2903FB2800A389CA /* LaunchScreen.storyboard */; };
 		C56F889A2903FB2800A389CA /* Preset_MessageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56F88992903FB2800A389CA /* Preset_MessageTests.swift */; };
@@ -28,16 +28,14 @@
 		C56F88BF2903FB7D00A389CA /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C56F88BD2903FB7D00A389CA /* MainInterface.storyboard */; };
 		C56F88C12903FB7E00A389CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C56F88C02903FB7E00A389CA /* Assets.xcassets */; };
 		C56F88C52903FB7E00A389CA /* Preset-Message-Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C56F88B62903FB7D00A389CA /* Preset-Message-Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		C56F88CE2903FCB700A389CA /* PresetMessageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56F88CA2903FCB700A389CA /* PresetMessageStore.swift */; };
 		C56F88CF2903FCB700A389CA /* PresetMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56F88CB2903FCB700A389CA /* PresetMessageViewController.swift */; };
 		C56F88D12903FCB700A389CA /* PresetMessage+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56F88CD2903FCB700A389CA /* PresetMessage+UIImage.swift */; };
 		C56F88D32903FD8100A389CA /* PresetMessage+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56F88CD2903FCB700A389CA /* PresetMessage+UIImage.swift */; };
-		C56F88D5290405AE00A389CA /* InputTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56F88D4290405AE00A389CA /* InputTableViewCell.swift */; };
+		C56F88D5290405AE00A389CA /* TextInputTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56F88D4290405AE00A389CA /* TextInputTableHeaderView.swift */; };
 		C56F88DA2904103A00A389CA /* PresetMessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56F88D92904103A00A389CA /* PresetMessageViewModel.swift */; };
-		C56F88DB2904116300A389CA /* PresetMessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56F88D92904103A00A389CA /* PresetMessageViewModel.swift */; };
-		C56F88DD2904120400A389CA /* PresetMessageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56F88DC2904120400A389CA /* PresetMessageManager.swift */; };
-		C56F88DE2904120400A389CA /* PresetMessageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56F88DC2904120400A389CA /* PresetMessageManager.swift */; };
-		C56F88DF2904120400A389CA /* PresetMessageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56F88DC2904120400A389CA /* PresetMessageManager.swift */; };
+		C56F88DD2904120400A389CA /* PresetMessageCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56F88DC2904120400A389CA /* PresetMessageCoreData.swift */; };
+		C56F88DE2904120400A389CA /* PresetMessageCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56F88DC2904120400A389CA /* PresetMessageCoreData.swift */; };
+		C56F88DF2904120400A389CA /* PresetMessageCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56F88DC2904120400A389CA /* PresetMessageCoreData.swift */; };
 		DEEDCD1D985DE6963686CE2A /* Pods_Preset_Message.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1128AFD2E365D0B6894FB2F /* Pods_Preset_Message.framework */; };
 /* End PBXBuildFile section */
 
@@ -94,7 +92,6 @@
 		C56F887F2903FB2800A389CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C56F88812903FB2800A389CA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C56F88832903FB2800A389CA /* PresetTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetTableViewController.swift; sourceTree = "<group>"; };
-		C56F88862903FB2800A389CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C56F888B2903FB2800A389CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C56F888E2903FB2800A389CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C56F88902903FB2800A389CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -109,12 +106,11 @@
 		C56F88BE2903FB7D00A389CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		C56F88C02903FB7E00A389CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C56F88C22903FB7E00A389CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C56F88CA2903FCB700A389CA /* PresetMessageStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresetMessageStore.swift; sourceTree = "<group>"; };
 		C56F88CB2903FCB700A389CA /* PresetMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresetMessageViewController.swift; sourceTree = "<group>"; };
 		C56F88CD2903FCB700A389CA /* PresetMessage+UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PresetMessage+UIImage.swift"; sourceTree = "<group>"; };
-		C56F88D4290405AE00A389CA /* InputTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTableViewCell.swift; sourceTree = "<group>"; };
+		C56F88D4290405AE00A389CA /* TextInputTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputTableHeaderView.swift; sourceTree = "<group>"; };
 		C56F88D92904103A00A389CA /* PresetMessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetMessageViewModel.swift; sourceTree = "<group>"; };
-		C56F88DC2904120400A389CA /* PresetMessageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetMessageManager.swift; sourceTree = "<group>"; };
+		C56F88DC2904120400A389CA /* PresetMessageCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetMessageCoreData.swift; sourceTree = "<group>"; };
 		F06802EC0EC802D53F0F0569 /* Pods-Preset-Message.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Preset-Message.release.xcconfig"; path = "Target Support Files/Pods-Preset-Message/Pods-Preset-Message.release.xcconfig"; sourceTree = "<group>"; };
 		F0E49D38D21294E30C025D2B /* Pods-Preset-Message.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Preset-Message.debug.xcconfig"; path = "Target Support Files/Pods-Preset-Message/Pods-Preset-Message.debug.xcconfig"; sourceTree = "<group>"; };
 		F1128AFD2E365D0B6894FB2F /* Pods_Preset_Message.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Preset_Message.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -166,6 +162,43 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		C5351B4E2906677D00F4475C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C5351B402906089F00F4475C /* Presenter.swift */,
+				C5351B49290626B600F4475C /* PresetMessageSQL.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C5351B4F2906679400F4475C /* App */ = {
+			isa = PBXGroup;
+			children = (
+				C56F887F2903FB2800A389CA /* AppDelegate.swift */,
+				C56F88812903FB2800A389CA /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		C5351B50290667B600F4475C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C56F88832903FB2800A389CA /* PresetTableViewController.swift */,
+				C5351B4529061FA500F4475C /* PresetEditViewController.swift */,
+				C56F88D4290405AE00A389CA /* TextInputTableHeaderView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C5351B51290667D900F4475C /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				C56F88DC2904120400A389CA /* PresetMessageCoreData.swift */,
+				C54B44E42905F257003B587E /* PresetMessageSQLStore.swift */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
 		C56F88732903FB2800A389CA = {
 			isa = PBXGroup;
 			children = (
@@ -193,21 +226,15 @@
 		C56F887E2903FB2800A389CA /* Preset-Message */ = {
 			isa = PBXGroup;
 			children = (
+				C56F88D92904103A00A389CA /* PresetMessageViewModel.swift */,
+				C5351B51290667D900F4475C /* Persistence */,
+				C5351B50290667B600F4475C /* Views */,
+				C5351B4F2906679400F4475C /* App */,
+				C5351B4E2906677D00F4475C /* Models */,
 				C5351B4C2906333B00F4475C /* Preset-Message.entitlements */,
-				C56F887F2903FB2800A389CA /* AppDelegate.swift */,
-				C56F88812903FB2800A389CA /* SceneDelegate.swift */,
-				C56F88832903FB2800A389CA /* PresetTableViewController.swift */,
-				C5351B4529061FA500F4475C /* PresetEditViewController.swift */,
-				C56F88852903FB2800A389CA /* Main.storyboard */,
 				C56F888B2903FB2800A389CA /* Assets.xcassets */,
 				C56F888D2903FB2800A389CA /* LaunchScreen.storyboard */,
 				C56F88902903FB2800A389CA /* Info.plist */,
-				C56F88D4290405AE00A389CA /* InputTableViewCell.swift */,
-				C56F88D92904103A00A389CA /* PresetMessageViewModel.swift */,
-				C56F88DC2904120400A389CA /* PresetMessageManager.swift */,
-				C54B44E42905F257003B587E /* PresetMessageSQLStore.swift */,
-				C5351B402906089F00F4475C /* Presenter.swift */,
-				C5351B49290626B600F4475C /* PresetMessageSQL.swift */,
 			);
 			path = "Preset-Message";
 			sourceTree = "<group>";
@@ -243,14 +270,13 @@
 			isa = PBXGroup;
 			children = (
 				C5351B4D290633E000F4475C /* Preset-Message-Extension.entitlements */,
+				C5351B472906253D00F4475C /* PresetManager.swift */,
 				C56F88BB2903FB7D00A389CA /* MessagesViewController.swift */,
 				C56F88CB2903FCB700A389CA /* PresetMessageViewController.swift */,
 				C56F88CD2903FCB700A389CA /* PresetMessage+UIImage.swift */,
-				C56F88CA2903FCB700A389CA /* PresetMessageStore.swift */,
 				C56F88BD2903FB7D00A389CA /* MainInterface.storyboard */,
 				C56F88C02903FB7E00A389CA /* Assets.xcassets */,
 				C56F88C22903FB7E00A389CA /* Info.plist */,
-				C5351B472906253D00F4475C /* PresetManager.swift */,
 			);
 			path = "Preset-Message-Extension";
 			sourceTree = "<group>";
@@ -387,7 +413,6 @@
 			files = (
 				C56F888F2903FB2800A389CA /* LaunchScreen.storyboard in Resources */,
 				C56F888C2903FB2800A389CA /* Assets.xcassets in Resources */,
-				C56F88872903FB2800A389CA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,11 +512,11 @@
 			files = (
 				C56F88842903FB2800A389CA /* PresetTableViewController.swift in Sources */,
 				C5351B412906089F00F4475C /* Presenter.swift in Sources */,
-				C56F88D5290405AE00A389CA /* InputTableViewCell.swift in Sources */,
+				C56F88D5290405AE00A389CA /* TextInputTableHeaderView.swift in Sources */,
 				C56F88802903FB2800A389CA /* AppDelegate.swift in Sources */,
 				C5351B4A290626B600F4475C /* PresetMessageSQL.swift in Sources */,
 				C56F88DA2904103A00A389CA /* PresetMessageViewModel.swift in Sources */,
-				C56F88DD2904120400A389CA /* PresetMessageManager.swift in Sources */,
+				C56F88DD2904120400A389CA /* PresetMessageCoreData.swift in Sources */,
 				C56F88D32903FD8100A389CA /* PresetMessage+UIImage.swift in Sources */,
 				C5351B4629061FA500F4475C /* PresetEditViewController.swift in Sources */,
 				C54B44E52905F257003B587E /* PresetMessageSQLStore.swift in Sources */,
@@ -503,7 +528,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C56F88DE2904120400A389CA /* PresetMessageManager.swift in Sources */,
+				C56F88DE2904120400A389CA /* PresetMessageCoreData.swift in Sources */,
 				C56F889A2903FB2800A389CA /* Preset_MessageTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -521,13 +546,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C56F88CE2903FCB700A389CA /* PresetMessageStore.swift in Sources */,
 				C5351B4B290626C100F4475C /* PresetMessageSQL.swift in Sources */,
 				C56F88CF2903FCB700A389CA /* PresetMessageViewController.swift in Sources */,
 				C56F88D12903FCB700A389CA /* PresetMessage+UIImage.swift in Sources */,
+				C5351B52290668B300F4475C /* PresetMessageViewModel.swift in Sources */,
 				C5351B482906253D00F4475C /* PresetManager.swift in Sources */,
-				C56F88DB2904116300A389CA /* PresetMessageViewModel.swift in Sources */,
-				C56F88DF2904120400A389CA /* PresetMessageManager.swift in Sources */,
+				C56F88DF2904120400A389CA /* PresetMessageCoreData.swift in Sources */,
 				C56F88BC2903FB7D00A389CA /* MessagesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -553,14 +577,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		C56F88852903FB2800A389CA /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C56F88862903FB2800A389CA /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		C56F888D2903FB2800A389CA /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

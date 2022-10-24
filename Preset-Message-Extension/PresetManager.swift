@@ -23,7 +23,12 @@ class PresetManager {
     }
     func openConnection(path: String) throws{
         let fileManager = FileManager()
-        let folderURL = try fileManager.containerURL(forSecurityApplicationGroupIdentifier: "blinq.challenge")!.appendingPathComponent("database", isDirectory: true)
+        guard let folderURL = fileManager
+            .containerURL(forSecurityApplicationGroupIdentifier: "blinq.challenge")?
+            .appendingPathComponent("database", isDirectory: true) else {
+            
+            fatalError()
+        }
         try fileManager.createDirectory(at: folderURL, withIntermediateDirectories: true)
         
         // Connect to a database on disk
