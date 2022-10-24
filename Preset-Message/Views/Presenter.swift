@@ -9,7 +9,7 @@ import Foundation
 
 protocol PresetMessageView : AnyObject {
     func setPresets(_ presets : [PresetMessageViewModel])
-//    func updatedPreset(_ preset: PresetMessageViewModel)
+    func createdPreset(id: Int64)
 }
 
 class Presenter {
@@ -40,6 +40,7 @@ class Presenter {
         do{
             var mapped = PresetMessageSQL.from(viewModel: preset) // this is updated with new id, if it has not existed
             try store.save(&mapped)
+            self.view.createdPreset(id: mapped.pid!)
         } catch let e {
             print("Error: save preset")
             print(e.localizedDescription)
@@ -59,7 +60,7 @@ class Presenter {
     }
     
     func editPreset(_ preset: PresetMessageViewModel){
-        createPreset(preset)
+        createPreset(preset) // sqlite use 1 function for update and create
     }
     
 }

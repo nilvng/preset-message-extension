@@ -17,7 +17,7 @@ class PresetEditViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "Preset Messages"
+        navigationItem.title = "Edit Preset Message"
         view.backgroundColor = .systemBackground
         
         setupTextField()
@@ -55,7 +55,7 @@ extension PresetEditViewController : UITextFieldDelegate {
         }
         preset.text = text
         self.delegate?.presetEdit(updatedPreset: self.preset)
-        return false
+        return true
     }
     
 }

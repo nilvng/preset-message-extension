@@ -16,7 +16,7 @@ class PresetTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.rightBarButtonItem = editButtonItem
+//        navigationItem.rightBarButtonItem = editButtonItem
         navigationItem.title = "Preset Messages"
         navigationController?.navigationBar.prefersLargeTitles = true
 
@@ -31,14 +31,14 @@ class PresetTableViewController: UITableViewController {
         self.presenter.getPresets()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         navigationController?.navigationBar.prefersLargeTitles = true
         self.populateData()
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
         navigationController?.navigationBar.prefersLargeTitles = false
     }
     
@@ -96,6 +96,11 @@ extension PresetTableViewController : InputTableViewCellDelegate {
 }
 // MARK: PresetMessageView
 extension PresetTableViewController : PresetMessageView {
+    func createdPreset(id: Int64) {
+        guard self.items.count > 0 else{return}
+        self.items[self.items.count - 1].id = id
+    }
+    
     func setPresets(_ presets: [PresetMessageViewModel]) {
         self.items = presets
         self.tableView.reloadData()

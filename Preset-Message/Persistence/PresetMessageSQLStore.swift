@@ -56,6 +56,7 @@ extension PresetMessageSQLStore{
     func save(_ msg: inout PresetMessageSQL) throws{
         try dbConnection?.write { db in
             try msg.save(db)
+            msg.pid = db.lastInsertedRowID
         }
     }
     func delete(ids : [Int64]) throws {

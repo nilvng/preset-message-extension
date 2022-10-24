@@ -165,7 +165,6 @@
 		C5351B4E2906677D00F4475C /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				C5351B402906089F00F4475C /* Presenter.swift */,
 				C5351B49290626B600F4475C /* PresetMessageSQL.swift */,
 			);
 			path = Models;
@@ -186,6 +185,7 @@
 				C56F88832903FB2800A389CA /* PresetTableViewController.swift */,
 				C5351B4529061FA500F4475C /* PresetEditViewController.swift */,
 				C56F88D4290405AE00A389CA /* TextInputTableHeaderView.swift */,
+				C5351B402906089F00F4475C /* Presenter.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
