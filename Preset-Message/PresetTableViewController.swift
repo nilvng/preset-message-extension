@@ -10,7 +10,7 @@ import UIKit
 class PresetTableViewController: UITableViewController {
 
     var items : [PresetMessageViewModel] = []
-//    var delegate : ?
+    lazy var presenter  = Presenter(store: PresetMessageSQLStore(), view: self)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,13 +20,19 @@ class PresetTableViewController: UITableViewController {
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "presetCell")
         tableView.register(InputTableViewCell.self, forCellReuseIdentifier: "inputCell")
-
-        items = [
-            PresetMessageViewModel.greeting,
-            PresetMessageViewModel.brb,
-            PresetMessageViewModel.seeyah
-        ]
         
+        populateData()
+    }
+    
+    func populateData(){
+        
+//        items = [
+//            PresetMessageViewModel.greeting,
+//            PresetMessageViewModel.brb,
+//            PresetMessageViewModel.seeyah
+//        ]
+        
+        self.presenter.getPresets()
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -49,18 +55,48 @@ class PresetTableViewController: UITableViewController {
         return cell
     }
     
+//- MARK: Table View Delegate
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        /// TODO: update preset
         let m = items[indexPath.item - 1]
-//        self.delegate?.messageDidSelect(message: m)
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let p = self.items[indexPath.item - 1]
+            self.tableDelete(indexPath: indexPath)
+            self.presenter.deletePreset(p)
+        }
     }
 
 }
 
+// MARK: Cell Delegate
 extension PresetTableViewController : InputTableViewCellDelegate {
     func inputCell(submitted text: String) {
-        items.append(PresetMessageViewModel(text: text))
+        let newPreset = PresetMessageViewModel(text: text)
+        self.tableAdd(preset: newPreset)
+        self.presenter.createPreset(newPreset)
+    }
+    
+}
+// MARK: PresetMessageView
+extension PresetTableViewController : PresetMessageView {
+    func setPresets(_ presets: [PresetMessageViewModel]) {
+        self.items = presets
+        self.tableView.reloadData()
+    }
+}
+
+// MARK: UI Data
+extension PresetTableViewController {
+    func tableAdd(preset: PresetMessageViewModel){
+        self.items.append(preset)
         tableView.reloadData()
     }
     
-    
+    func tableDelete(indexPath: IndexPath){
+        self.items.remove(at: indexPath.item - 1)
+        self.tableView.deleteRows(at: [indexPath], with: .automatic)
+    }
 }

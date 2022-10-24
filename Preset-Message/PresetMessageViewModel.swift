@@ -8,14 +8,15 @@
 import Foundation
 
 struct PresetMessageViewModel{
+    init(text: String) {
+        self.text = text
+    }
+    var id : Int64?
     var text : String
     var queryItems : [URLQueryItem] {
         [URLQueryItem(name: "preset", value: self.text)]
     }
-//    static func create(model: PresetMessage) -> PresetMessageViewModel{
-//        let msg = PresetMessageViewModel(text: model.text ?? "")
-//        return msg
-//    }
+    
 }
 
 extension PresetMessageViewModel {

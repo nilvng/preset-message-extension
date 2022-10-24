@@ -7,13 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C5351B412906089F00F4475C /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5351B402906089F00F4475C /* Presenter.swift */; };
 		C54B44E52905F257003B587E /* PresetMessageSQLStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C54B44E42905F257003B587E /* PresetMessageSQLStore.swift */; };
-		C5673A982904164C0050C141 /* PresetMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56F88E12904148F00A389CA /* PresetMessage.swift */; };
 		C56F88802903FB2800A389CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56F887F2903FB2800A389CA /* AppDelegate.swift */; };
 		C56F88822903FB2800A389CA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56F88812903FB2800A389CA /* SceneDelegate.swift */; };
 		C56F88842903FB2800A389CA /* PresetTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56F88832903FB2800A389CA /* PresetTableViewController.swift */; };
 		C56F88872903FB2800A389CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C56F88852903FB2800A389CA /* Main.storyboard */; };
-		C56F888A2903FB2800A389CA /* Preset_Message.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C56F88882903FB2800A389CA /* Preset_Message.xcdatamodeld */; };
 		C56F888C2903FB2800A389CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C56F888B2903FB2800A389CA /* Assets.xcassets */; };
 		C56F888F2903FB2800A389CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C56F888D2903FB2800A389CA /* LaunchScreen.storyboard */; };
 		C56F889A2903FB2800A389CA /* Preset_MessageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56F88992903FB2800A389CA /* Preset_MessageTests.swift */; };
@@ -34,7 +33,7 @@
 		C56F88DD2904120400A389CA /* PresetMessageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56F88DC2904120400A389CA /* PresetMessageManager.swift */; };
 		C56F88DE2904120400A389CA /* PresetMessageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56F88DC2904120400A389CA /* PresetMessageManager.swift */; };
 		C56F88DF2904120400A389CA /* PresetMessageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56F88DC2904120400A389CA /* PresetMessageManager.swift */; };
-		C56F88E22904148F00A389CA /* PresetMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56F88E12904148F00A389CA /* PresetMessage.swift */; };
+		DEEDCD1D985DE6963686CE2A /* Pods_Preset_Message.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1128AFD2E365D0B6894FB2F /* Pods_Preset_Message.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,13 +75,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C5351B402906089F00F4475C /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
 		C54B44E42905F257003B587E /* PresetMessageSQLStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetMessageSQLStore.swift; sourceTree = "<group>"; };
 		C56F887C2903FB2800A389CA /* Preset-Message.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Preset-Message.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C56F887F2903FB2800A389CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C56F88812903FB2800A389CA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C56F88832903FB2800A389CA /* PresetTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetTableViewController.swift; sourceTree = "<group>"; };
 		C56F88862903FB2800A389CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		C56F88892903FB2800A389CA /* Preset_Message.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Preset_Message.xcdatamodel; sourceTree = "<group>"; };
 		C56F888B2903FB2800A389CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C56F888E2903FB2800A389CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C56F88902903FB2800A389CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -103,7 +102,9 @@
 		C56F88D4290405AE00A389CA /* InputTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTableViewCell.swift; sourceTree = "<group>"; };
 		C56F88D92904103A00A389CA /* PresetMessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetMessageViewModel.swift; sourceTree = "<group>"; };
 		C56F88DC2904120400A389CA /* PresetMessageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetMessageManager.swift; sourceTree = "<group>"; };
-		C56F88E12904148F00A389CA /* PresetMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetMessage.swift; sourceTree = "<group>"; };
+		F06802EC0EC802D53F0F0569 /* Pods-Preset-Message.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Preset-Message.release.xcconfig"; path = "Target Support Files/Pods-Preset-Message/Pods-Preset-Message.release.xcconfig"; sourceTree = "<group>"; };
+		F0E49D38D21294E30C025D2B /* Pods-Preset-Message.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Preset-Message.debug.xcconfig"; path = "Target Support Files/Pods-Preset-Message/Pods-Preset-Message.debug.xcconfig"; sourceTree = "<group>"; };
+		F1128AFD2E365D0B6894FB2F /* Pods_Preset_Message.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Preset_Message.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +112,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEEDCD1D985DE6963686CE2A /* Pods_Preset_Message.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,6 +141,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		29175EFDDABE37259EE37005 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F0E49D38D21294E30C025D2B /* Pods-Preset-Message.debug.xcconfig */,
+				F06802EC0EC802D53F0F0569 /* Pods-Preset-Message.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		C56F88732903FB2800A389CA = {
 			isa = PBXGroup;
 			children = (
@@ -148,6 +159,7 @@
 				C56F88BA2903FB7D00A389CA /* Preset-Message-Extension */,
 				C56F88B72903FB7D00A389CA /* Frameworks */,
 				C56F887D2903FB2800A389CA /* Products */,
+				29175EFDDABE37259EE37005 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -172,12 +184,11 @@
 				C56F888B2903FB2800A389CA /* Assets.xcassets */,
 				C56F888D2903FB2800A389CA /* LaunchScreen.storyboard */,
 				C56F88902903FB2800A389CA /* Info.plist */,
-				C56F88882903FB2800A389CA /* Preset_Message.xcdatamodeld */,
 				C56F88D4290405AE00A389CA /* InputTableViewCell.swift */,
 				C56F88D92904103A00A389CA /* PresetMessageViewModel.swift */,
 				C56F88DC2904120400A389CA /* PresetMessageManager.swift */,
-				C56F88E12904148F00A389CA /* PresetMessage.swift */,
 				C54B44E42905F257003B587E /* PresetMessageSQLStore.swift */,
+				C5351B402906089F00F4475C /* Presenter.swift */,
 			);
 			path = "Preset-Message";
 			sourceTree = "<group>";
@@ -203,6 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				C56F88B82903FB7D00A389CA /* Messages.framework */,
+				F1128AFD2E365D0B6894FB2F /* Pods_Preset_Message.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -228,10 +240,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C56F88A92903FB2800A389CA /* Build configuration list for PBXNativeTarget "Preset-Message" */;
 			buildPhases = (
+				2F580F8E3ABA8A43B98C2DFF /* [CP] Check Pods Manifest.lock */,
 				C56F88782903FB2800A389CA /* Sources */,
 				C56F88792903FB2800A389CA /* Frameworks */,
 				C56F887A2903FB2800A389CA /* Resources */,
 				C56F88C92903FB7E00A389CA /* Embed App Extensions */,
+				5708028CB211F6C608033556 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -379,20 +393,61 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2F580F8E3ABA8A43B98C2DFF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Preset-Message-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5708028CB211F6C608033556 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Preset-Message/Pods-Preset-Message-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Preset-Message/Pods-Preset-Message-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Preset-Message/Pods-Preset-Message-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C56F88782903FB2800A389CA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				C56F88842903FB2800A389CA /* PresetTableViewController.swift in Sources */,
+				C5351B412906089F00F4475C /* Presenter.swift in Sources */,
 				C56F88D5290405AE00A389CA /* InputTableViewCell.swift in Sources */,
 				C56F88802903FB2800A389CA /* AppDelegate.swift in Sources */,
-				C56F88E22904148F00A389CA /* PresetMessage.swift in Sources */,
 				C56F88DA2904103A00A389CA /* PresetMessageViewModel.swift in Sources */,
 				C56F88DD2904120400A389CA /* PresetMessageManager.swift in Sources */,
 				C56F88D32903FD8100A389CA /* PresetMessage+UIImage.swift in Sources */,
 				C54B44E52905F257003B587E /* PresetMessageSQLStore.swift in Sources */,
-				C56F888A2903FB2800A389CA /* Preset_Message.xcdatamodeld in Sources */,
 				C56F88822903FB2800A389CA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -401,7 +456,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C5673A982904164C0050C141 /* PresetMessage.swift in Sources */,
 				C56F88DE2904120400A389CA /* PresetMessageManager.swift in Sources */,
 				C56F889A2903FB2800A389CA /* Preset_MessageTests.swift in Sources */,
 			);
@@ -593,6 +647,7 @@
 		};
 		C56F88AA2903FB2800A389CA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F0E49D38D21294E30C025D2B /* Pods-Preset-Message.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -620,6 +675,7 @@
 		};
 		C56F88AB2903FB2800A389CA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F06802EC0EC802D53F0F0569 /* Pods-Preset-Message.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -816,19 +872,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		C56F88882903FB2800A389CA /* Preset_Message.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				C56F88892903FB2800A389CA /* Preset_Message.xcdatamodel */,
-			);
-			currentVersion = C56F88892903FB2800A389CA /* Preset_Message.xcdatamodel */;
-			path = Preset_Message.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = C56F88742903FB2800A389CA /* Project object */;
 }
