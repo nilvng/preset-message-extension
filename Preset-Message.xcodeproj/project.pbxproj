@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C5351B412906089F00F4475C /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5351B402906089F00F4475C /* Presenter.swift */; };
+		C5351B4629061FA500F4475C /* PresetEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5351B4529061FA500F4475C /* PresetEditViewController.swift */; };
 		C54B44E52905F257003B587E /* PresetMessageSQLStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C54B44E42905F257003B587E /* PresetMessageSQLStore.swift */; };
 		C56F88802903FB2800A389CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56F887F2903FB2800A389CA /* AppDelegate.swift */; };
 		C56F88822903FB2800A389CA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56F88812903FB2800A389CA /* SceneDelegate.swift */; };
@@ -76,6 +77,7 @@
 
 /* Begin PBXFileReference section */
 		C5351B402906089F00F4475C /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
+		C5351B4529061FA500F4475C /* PresetEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetEditViewController.swift; sourceTree = "<group>"; };
 		C54B44E42905F257003B587E /* PresetMessageSQLStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetMessageSQLStore.swift; sourceTree = "<group>"; };
 		C56F887C2903FB2800A389CA /* Preset-Message.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Preset-Message.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C56F887F2903FB2800A389CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 				C56F887F2903FB2800A389CA /* AppDelegate.swift */,
 				C56F88812903FB2800A389CA /* SceneDelegate.swift */,
 				C56F88832903FB2800A389CA /* PresetTableViewController.swift */,
+				C5351B4529061FA500F4475C /* PresetEditViewController.swift */,
 				C56F88852903FB2800A389CA /* Main.storyboard */,
 				C56F888B2903FB2800A389CA /* Assets.xcassets */,
 				C56F888D2903FB2800A389CA /* LaunchScreen.storyboard */,
@@ -447,6 +450,7 @@
 				C56F88DA2904103A00A389CA /* PresetMessageViewModel.swift in Sources */,
 				C56F88DD2904120400A389CA /* PresetMessageManager.swift in Sources */,
 				C56F88D32903FD8100A389CA /* PresetMessage+UIImage.swift in Sources */,
+				C5351B4629061FA500F4475C /* PresetEditViewController.swift in Sources */,
 				C54B44E52905F257003B587E /* PresetMessageSQLStore.swift in Sources */,
 				C56F88822903FB2800A389CA /* SceneDelegate.swift in Sources */,
 			);

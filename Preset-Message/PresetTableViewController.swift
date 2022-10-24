@@ -25,14 +25,18 @@ class PresetTableViewController: UITableViewController {
     }
     
     func populateData(){
-        
-//        items = [
-//            PresetMessageViewModel.greeting,
-//            PresetMessageViewModel.brb,
-//            PresetMessageViewModel.seeyah
-//        ]
-        
         self.presenter.getPresets()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        navigationController?.navigationBar.prefersLargeTitles = true
+        self.populateData()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        navigationController?.navigationBar.prefersLargeTitles = false
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -59,6 +63,10 @@ class PresetTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         /// TODO: update preset
         let m = items[indexPath.item - 1]
+        let editVC = PresetEditViewController()
+        editVC.configure(preset: m)
+        editVC.delegate = self
+        navigationController?.pushViewController(editVC, animated: true)
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
@@ -99,4 +107,13 @@ extension PresetTableViewController {
         self.items.remove(at: indexPath.item - 1)
         self.tableView.deleteRows(at: [indexPath], with: .automatic)
     }
+}
+
+extension PresetTableViewController : PresetEditViewDelegate {
+    
+    func presetEdit(updatedPreset: PresetMessageViewModel) {
+        self.presenter.editPreset(updatedPreset)
+    }
+    
+    
 }

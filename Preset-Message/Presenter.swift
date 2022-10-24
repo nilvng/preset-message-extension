@@ -58,6 +58,10 @@ class Presenter {
         }
     }
     
+    func editPreset(_ preset: PresetMessageViewModel){
+        createPreset(preset)
+    }
+    
 }
 
 
