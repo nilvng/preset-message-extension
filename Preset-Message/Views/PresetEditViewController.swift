@@ -12,6 +12,8 @@ protocol PresetEditViewDelegate : AnyObject {
 class PresetEditViewController: UIViewController {
     
     var textField = UITextField()
+    var commentLabel = UILabel()
+    
     var preset : PresetMessageViewModel!
     var delegate :PresetEditViewDelegate?
     
@@ -21,11 +23,15 @@ class PresetEditViewController: UIViewController {
         view.backgroundColor = .systemBackground
         
         setupTextField()
-        
+        setupCommentLabel()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        textField.becomeFirstResponder()
     }
     
     func setupTextField(){
@@ -40,6 +46,18 @@ class PresetEditViewController: UIViewController {
             ])
     }
     
+    func setupCommentLabel(){
+        self.view.addSubview(commentLabel)
+        commentLabel.textAlignment = .center
+        commentLabel.text = "default"
+        commentLabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            commentLabel.leadingAnchor.constraint(equalTo: textField.leadingAnchor),
+            commentLabel.trailingAnchor.constraint(equalTo: textField.trailingAnchor),
+            commentLabel.bottomAnchor.constraint(equalTo: textField.bottomAnchor, constant: 50),
+            ])
+    }
+    
     func configure(preset: PresetMessageViewModel){
         self.preset = preset
         textField.text = preset.text
@@ -49,12 +67,18 @@ class PresetEditViewController: UIViewController {
 }
 // MARK: TextFieldDelegate
 extension PresetEditViewController : UITextFieldDelegate {
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        commentLabel.text = "Updating..."
+    }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         guard let text = textField.text, text != " " else {
             return false
         }
         preset.text = text
         self.delegate?.presetEdit(updatedPreset: self.preset)
+        commentLabel.text = "Updated!"
         return true
     }
     
