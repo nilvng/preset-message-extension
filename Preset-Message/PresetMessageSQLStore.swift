@@ -23,11 +23,12 @@ class PresetMessageSQLStore {
     }
     func openConnection(path: String) throws{
         let fileManager = FileManager()
-        let folderURL = try fileManager.containerURL(forSecurityApplicationGroupIdentifier: "blinq.challenge")!.appendingPathComponent("database", isDirectory: true)
+        let folderURL = try fileManager
+            .containerURL(forSecurityApplicationGroupIdentifier: "blinq.challenge")!
+            .appendingPathComponent("database", isDirectory: true)
         try fileManager.createDirectory(at: folderURL, withIntermediateDirectories: true)
         
         // Connect to a database on disk
-        // See https://github.com/groue/GRDB.swift/blob/master/README.md#database-connections
         let dbURL = folderURL.appendingPathComponent(path)
         print("db path: ", dbURL.path)
         dbConnection = try DatabaseQueue(path: dbURL.path)

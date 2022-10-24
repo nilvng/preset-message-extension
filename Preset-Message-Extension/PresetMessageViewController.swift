@@ -42,7 +42,7 @@ class PresetMessageViewController : UITableViewController{
         self.tableView.reloadData()
     }
     
-    
+    // MARK: Table View Data Source
     override func numberOfSections(in tableView: UITableView) -> Int {
         1
     }
@@ -57,6 +57,7 @@ class PresetMessageViewController : UITableViewController{
         return cell
     }
     
+    // MARK: Table View Delegate
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let m = items[indexPath.item]
         self.delegate?.messageDidSelect(message: m)

@@ -14,6 +14,7 @@ class MessagesViewController: MSMessagesAppViewController {
         super.viewDidLoad()
         
         print("up")
+        presentViewController()
         // Do any additional setup after loading the view.
     }
     
@@ -63,18 +64,14 @@ class MessagesViewController: MSMessagesAppViewController {
     override func didTransition(to presentationStyle: MSMessagesAppPresentationStyle) {
         // Called after the extension transitions to a new presentation style.
         super.didTransition(to: presentationStyle)
-        
-        guard let conversation = activeConversation else { fatalError("Expected an active converstation") }
-        presentViewController(for: conversation, with: presentationStyle)
     }
-    private func presentViewController(for conversation: MSConversation, with presentationStyle: MSMessagesAppPresentationStyle) {
+    private func presentViewController(with presentationStyle: MSMessagesAppPresentationStyle = .compact) {
         // Remove any child view controllers that have been presented.
         removeAllChildViewControllers()
         
         let controller: UIViewController = instantiatePresetMessageViewController()
 
         addChild(controller)
-        controller.view.frame = view.bounds
         controller.view.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(controller.view)
         
@@ -103,7 +100,9 @@ class MessagesViewController: MSMessagesAppViewController {
         return controller
     }
     /// - Tag: ComposeMessage
-    fileprivate func composeMessage(with presetMessage: PresetMessageViewModel, caption: String, session: MSSession? = nil) -> MSMessage {
+    fileprivate func composeMessage(with presetMessage: PresetMessageViewModel,
+                                    caption: String,
+                                    session: MSSession? = nil) -> MSMessage {
         var components = URLComponents()
         components.queryItems = presetMessage.queryItems
         
@@ -119,19 +118,14 @@ class MessagesViewController: MSMessagesAppViewController {
     }
 
 }
-
+// MARK: PresetMessageViewControllerDelegate
 extension MessagesViewController : PresetMessageViewControllerDelegate{
-    func messageDidSelect(message: PresetMessageViewModel) {
+    
+    func messageDidSelect(message messageViewModel: PresetMessageViewModel) {
+        
         guard let conversation = activeConversation else { fatalError("Expected a conversation") }
+        conversation.sendText(messageViewModel.text)
 
-        let message = composeMessage(with: message, caption: "", session: conversation.selectedMessage?.session)
-
-        // Add the message to the conversation.
-        conversation.send(message) { error in
-            if let error = error {
-                print(error)
-            }
-        }
         dismiss()
     }
     
