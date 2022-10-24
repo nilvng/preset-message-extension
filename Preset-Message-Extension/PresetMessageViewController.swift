@@ -14,17 +14,34 @@ class PresetMessageViewController : UITableViewController{
     
     var items : [PresetMessageViewModel] = []
     var delegate : PresetMessageViewControllerDelegate?
+    lazy var manager = PresetManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "presetCell")
-        items = [
-            PresetMessageViewModel.greeting,
-            PresetMessageViewModel.brb,
-            PresetMessageViewModel.seeyah
-        ]
-        
+        populateData()
     }
+    
+    func populateData(){
+        print("populate data...")
+        do{
+            try self.manager.fetchAll { [weak self] presetSQLs in
+                guard let presets = presetSQLs else {
+                    return
+                }
+                let mappedPresets = presets.map { $0.toViewModel()}
+                self?.setPresets(mappedPresets)
+            }
+        } catch let e {
+            print(e.localizedDescription)
+        }
+    }
+    
+    func setPresets(_ presets: [PresetMessageViewModel]) {
+        self.items = presets
+        self.tableView.reloadData()
+    }
+    
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         1

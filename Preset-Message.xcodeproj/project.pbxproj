@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		92A47660C1B8BCD861FE5929 /* Pods_Preset_Message_Preset_Message_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25941107F69200FFE8D6A5B1 /* Pods_Preset_Message_Preset_Message_Extension.framework */; };
 		C5351B412906089F00F4475C /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5351B402906089F00F4475C /* Presenter.swift */; };
 		C5351B4629061FA500F4475C /* PresetEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5351B4529061FA500F4475C /* PresetEditViewController.swift */; };
+		C5351B482906253D00F4475C /* PresetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5351B472906253D00F4475C /* PresetManager.swift */; };
+		C5351B4A290626B600F4475C /* PresetMessageSQL.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5351B49290626B600F4475C /* PresetMessageSQL.swift */; };
+		C5351B4B290626C100F4475C /* PresetMessageSQL.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5351B49290626B600F4475C /* PresetMessageSQL.swift */; };
 		C54B44E52905F257003B587E /* PresetMessageSQLStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C54B44E42905F257003B587E /* PresetMessageSQLStore.swift */; };
 		C56F88802903FB2800A389CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56F887F2903FB2800A389CA /* AppDelegate.swift */; };
 		C56F88822903FB2800A389CA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56F88812903FB2800A389CA /* SceneDelegate.swift */; };
@@ -76,8 +80,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		25941107F69200FFE8D6A5B1 /* Pods_Preset_Message_Preset_Message_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Preset_Message_Preset_Message_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		272E0EF5E97334AE78506FCF /* Pods-Preset-Message-Preset-Message-Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Preset-Message-Preset-Message-Extension.debug.xcconfig"; path = "Target Support Files/Pods-Preset-Message-Preset-Message-Extension/Pods-Preset-Message-Preset-Message-Extension.debug.xcconfig"; sourceTree = "<group>"; };
+		76713FF0F97842FF651EA959 /* Pods-Preset-Message-Preset-Message-Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Preset-Message-Preset-Message-Extension.release.xcconfig"; path = "Target Support Files/Pods-Preset-Message-Preset-Message-Extension/Pods-Preset-Message-Preset-Message-Extension.release.xcconfig"; sourceTree = "<group>"; };
 		C5351B402906089F00F4475C /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
 		C5351B4529061FA500F4475C /* PresetEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetEditViewController.swift; sourceTree = "<group>"; };
+		C5351B472906253D00F4475C /* PresetManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetManager.swift; sourceTree = "<group>"; };
+		C5351B49290626B600F4475C /* PresetMessageSQL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetMessageSQL.swift; sourceTree = "<group>"; };
+		C5351B4C2906333B00F4475C /* Preset-Message.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Preset-Message.entitlements"; sourceTree = "<group>"; };
+		C5351B4D290633E000F4475C /* Preset-Message-Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Preset-Message-Extension.entitlements"; sourceTree = "<group>"; };
 		C54B44E42905F257003B587E /* PresetMessageSQLStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetMessageSQLStore.swift; sourceTree = "<group>"; };
 		C56F887C2903FB2800A389CA /* Preset-Message.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Preset-Message.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C56F887F2903FB2800A389CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -137,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C56F88B92903FB7D00A389CA /* Messages.framework in Frameworks */,
+				92A47660C1B8BCD861FE5929 /* Pods_Preset_Message_Preset_Message_Extension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,6 +160,8 @@
 			children = (
 				F0E49D38D21294E30C025D2B /* Pods-Preset-Message.debug.xcconfig */,
 				F06802EC0EC802D53F0F0569 /* Pods-Preset-Message.release.xcconfig */,
+				272E0EF5E97334AE78506FCF /* Pods-Preset-Message-Preset-Message-Extension.debug.xcconfig */,
+				76713FF0F97842FF651EA959 /* Pods-Preset-Message-Preset-Message-Extension.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -179,6 +193,7 @@
 		C56F887E2903FB2800A389CA /* Preset-Message */ = {
 			isa = PBXGroup;
 			children = (
+				C5351B4C2906333B00F4475C /* Preset-Message.entitlements */,
 				C56F887F2903FB2800A389CA /* AppDelegate.swift */,
 				C56F88812903FB2800A389CA /* SceneDelegate.swift */,
 				C56F88832903FB2800A389CA /* PresetTableViewController.swift */,
@@ -192,6 +207,7 @@
 				C56F88DC2904120400A389CA /* PresetMessageManager.swift */,
 				C54B44E42905F257003B587E /* PresetMessageSQLStore.swift */,
 				C5351B402906089F00F4475C /* Presenter.swift */,
+				C5351B49290626B600F4475C /* PresetMessageSQL.swift */,
 			);
 			path = "Preset-Message";
 			sourceTree = "<group>";
@@ -218,6 +234,7 @@
 			children = (
 				C56F88B82903FB7D00A389CA /* Messages.framework */,
 				F1128AFD2E365D0B6894FB2F /* Pods_Preset_Message.framework */,
+				25941107F69200FFE8D6A5B1 /* Pods_Preset_Message_Preset_Message_Extension.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -225,13 +242,15 @@
 		C56F88BA2903FB7D00A389CA /* Preset-Message-Extension */ = {
 			isa = PBXGroup;
 			children = (
+				C5351B4D290633E000F4475C /* Preset-Message-Extension.entitlements */,
 				C56F88BB2903FB7D00A389CA /* MessagesViewController.swift */,
+				C56F88CB2903FCB700A389CA /* PresetMessageViewController.swift */,
 				C56F88CD2903FCB700A389CA /* PresetMessage+UIImage.swift */,
 				C56F88CA2903FCB700A389CA /* PresetMessageStore.swift */,
-				C56F88CB2903FCB700A389CA /* PresetMessageViewController.swift */,
 				C56F88BD2903FB7D00A389CA /* MainInterface.storyboard */,
 				C56F88C02903FB7E00A389CA /* Assets.xcassets */,
 				C56F88C22903FB7E00A389CA /* Info.plist */,
+				C5351B472906253D00F4475C /* PresetManager.swift */,
 			);
 			path = "Preset-Message-Extension";
 			sourceTree = "<group>";
@@ -300,6 +319,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C56F88C62903FB7E00A389CA /* Build configuration list for PBXNativeTarget "Preset-Message-Extension" */;
 			buildPhases = (
+				A5235F093BA70FC2A9DAB16B /* [CP] Check Pods Manifest.lock */,
 				C56F88B22903FB7D00A389CA /* Sources */,
 				C56F88B32903FB7D00A389CA /* Frameworks */,
 				C56F88B42903FB7D00A389CA /* Resources */,
@@ -436,6 +456,28 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Preset-Message/Pods-Preset-Message-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		A5235F093BA70FC2A9DAB16B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Preset-Message-Preset-Message-Extension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -447,6 +489,7 @@
 				C5351B412906089F00F4475C /* Presenter.swift in Sources */,
 				C56F88D5290405AE00A389CA /* InputTableViewCell.swift in Sources */,
 				C56F88802903FB2800A389CA /* AppDelegate.swift in Sources */,
+				C5351B4A290626B600F4475C /* PresetMessageSQL.swift in Sources */,
 				C56F88DA2904103A00A389CA /* PresetMessageViewModel.swift in Sources */,
 				C56F88DD2904120400A389CA /* PresetMessageManager.swift in Sources */,
 				C56F88D32903FD8100A389CA /* PresetMessage+UIImage.swift in Sources */,
@@ -479,8 +522,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C56F88CE2903FCB700A389CA /* PresetMessageStore.swift in Sources */,
+				C5351B4B290626C100F4475C /* PresetMessageSQL.swift in Sources */,
 				C56F88CF2903FCB700A389CA /* PresetMessageViewController.swift in Sources */,
 				C56F88D12903FCB700A389CA /* PresetMessage+UIImage.swift in Sources */,
+				C5351B482906253D00F4475C /* PresetManager.swift in Sources */,
 				C56F88DB2904116300A389CA /* PresetMessageViewModel.swift in Sources */,
 				C56F88DF2904120400A389CA /* PresetMessageManager.swift in Sources */,
 				C56F88BC2903FB7D00A389CA /* MessagesViewController.swift in Sources */,
@@ -656,8 +701,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Preset-Message/Preset-Message.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UBHQB9F5N3;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Preset-Message/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -684,6 +731,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Preset-Message/Preset-Message.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -779,10 +827,13 @@
 		};
 		C56F88C72903FB7E00A389CA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 272E0EF5E97334AE78506FCF /* Pods-Preset-Message-Preset-Message-Extension.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CODE_SIGN_ENTITLEMENTS = "Preset-Message-Extension/Preset-Message-Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UBHQB9F5N3;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Preset-Message-Extension/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Preset-Message-Extension";
@@ -804,10 +855,13 @@
 		};
 		C56F88C82903FB7E00A389CA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 76713FF0F97842FF651EA959 /* Pods-Preset-Message-Preset-Message-Extension.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CODE_SIGN_ENTITLEMENTS = "Preset-Message-Extension/Preset-Message-Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UBHQB9F5N3;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Preset-Message-Extension/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Preset-Message-Extension";

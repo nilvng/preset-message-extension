@@ -1,0 +1,6 @@
+framework module Pods_Preset_Message_Preset_Message_Extension {
+  umbrella header "Pods-Preset-Message-Preset-Message-Extension-umbrella.h"
+
+  export *
+  module * { export * }
+}

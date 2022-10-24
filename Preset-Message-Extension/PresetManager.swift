@@ -1,6 +1,6 @@
 //
-//  PresetMessageSQLStore.swift
-//  Preset-Message
+//  PresetManager.swift
+//  Preset-Message-Extension
 //
 //  Created by Nil Nguyen on 24/10/2022.
 //
@@ -8,7 +8,7 @@
 import Foundation
 import GRDB
 
-class PresetMessageSQLStore {
+class PresetManager {
     
     var dbConnection : DatabaseQueue?
     
@@ -41,25 +41,11 @@ class PresetMessageSQLStore {
         }
     }
     
-}
-
-// MARK: CRUD
-extension PresetMessageSQLStore{
-    func getAll(completion : @escaping ([PresetMessageSQL]?) -> Void) throws {
+    func fetchAll(completion : @escaping ([PresetMessageSQL]?) -> Void) throws{
         let res = try dbConnection?.write { db in
             return try PresetMessageSQL.fetchAll(db)
         }
         completion(res)
     }
-    func save(_ msg: inout PresetMessageSQL) throws{
-        try dbConnection?.write { db in
-            try msg.save(db)
-        }
-    }
-    func delete(ids : [Int64]) throws {
-        try dbConnection?.write { db in
-            _ = try PresetMessageSQL.deleteAll(db, keys: ids)
-        }
-    }
-//    func update(){}
+    
 }
