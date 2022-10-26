@@ -10,7 +10,12 @@ import UIKit
 class PresetTableViewController: UITableViewController {
 
     var cellID = "presetCell"
+    var itemsByCategory : [PresetMessageTagModel] = []
     var items : [PresetMessageViewModel] = []
+    
+    var categories = [Categories.Family, Categories.Friend, Categories.Business]
+    var numRecords : [Int] = []
+    
     lazy var presenter  = Presenter(store: PresetMessageSQLStore(), view: self)
     
     override func viewDidLoad() {
@@ -28,7 +33,16 @@ class PresetTableViewController: UITableViewController {
     }
     
     func populateData(){
-        self.presenter.getPresets()
+        //        self.presenter.getPresets()
+        
+        let data = [PresetMessageViewModel.greeting, PresetMessageViewModel.brb]
+        self.items = data
+        
+        for category in categories {
+            var tagModel = PresetMessageTagModel(categoryName: category)
+            tagModel.setItems(data: data)
+            self.itemsByCategory.append(tagModel)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -43,19 +57,26 @@ class PresetTableViewController: UITableViewController {
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        1
+        categories.count
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        items.count
+        itemsByCategory[section].items.count
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        categories[section].getText()
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
   
-        let cell = tableView.dequeueReusableCell(withIdentifier: self.cellID, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: self.cellID) ?? UITableViewCell(style: .value1, reuseIdentifier: self.cellID)
 
-        cell.textLabel?.text = items[indexPath.item].text
-        cell.textLabel?.numberOfLines = -1
+        let itemsOfCategory = self.itemsByCategory[indexPath.section].items
         
+        cell.textLabel?.text = itemsOfCategory[indexPath.row].text
+        
+        cell.textLabel?.numberOfLines = -1
+//        cell.detailTextLabel?.text = items[indexPath.item].category?.rawValue ?? ""
         return cell
     }
     
@@ -64,7 +85,7 @@ class PresetTableViewController: UITableViewController {
         /// TODO: update preset
         let m = items[indexPath.item]
         let editVC = PresetEditViewController()
-        editVC.configure(preset: m)
+//        editVC.configure(preset: m)
         editVC.delegate = self
         navigationController?.pushViewController(editVC, animated: true)
     }
@@ -73,14 +94,15 @@ class PresetTableViewController: UITableViewController {
         if editingStyle == .delete {
             let p = self.items[indexPath.item]
             self.tableDelete(indexPath: indexPath)
-            self.presenter.deletePreset(p)
+//            self.presenter.deletePreset(p)
         }
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let inputView =  TextInputTableHeaderView()
-        inputView.delegate = self
-        return inputView
+//        let inputView =  TextInputTableHeaderView()
+//        inputView.delegate = self
+//        return inputView
+        nil
     }
 
 }

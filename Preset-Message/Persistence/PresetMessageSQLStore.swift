@@ -47,6 +47,7 @@ class PresetMessageSQLStore {
 
 // MARK: CRUD
 extension PresetMessageSQLStore{
+    
     func getAll(completion : @escaping ([PresetMessageSQL]?) -> Void) throws {
         let res = try dbConnection?.write { db in
             return try PresetMessageSQL.fetchAll(db)

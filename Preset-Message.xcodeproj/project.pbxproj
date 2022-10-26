@@ -15,6 +15,8 @@
 		C5351B4B290626C100F4475C /* PresetMessageSQL.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5351B49290626B600F4475C /* PresetMessageSQL.swift */; };
 		C5351B52290668B300F4475C /* PresetMessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56F88D92904103A00A389CA /* PresetMessageViewModel.swift */; };
 		C54B44E52905F257003B587E /* PresetMessageSQLStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C54B44E42905F257003B587E /* PresetMessageSQLStore.swift */; };
+		C56EECB52908BEAE009FA5F8 /* PresetMessageTagModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56EECB42908BEAE009FA5F8 /* PresetMessageTagModel.swift */; };
+		C56EECB62908BEAE009FA5F8 /* PresetMessageTagModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56EECB42908BEAE009FA5F8 /* PresetMessageTagModel.swift */; };
 		C56F88802903FB2800A389CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56F887F2903FB2800A389CA /* AppDelegate.swift */; };
 		C56F88822903FB2800A389CA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56F88812903FB2800A389CA /* SceneDelegate.swift */; };
 		C56F88842903FB2800A389CA /* PresetTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56F88832903FB2800A389CA /* PresetTableViewController.swift */; };
@@ -88,6 +90,7 @@
 		C5351B4C2906333B00F4475C /* Preset-Message.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Preset-Message.entitlements"; sourceTree = "<group>"; };
 		C5351B4D290633E000F4475C /* Preset-Message-Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Preset-Message-Extension.entitlements"; sourceTree = "<group>"; };
 		C54B44E42905F257003B587E /* PresetMessageSQLStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetMessageSQLStore.swift; sourceTree = "<group>"; };
+		C56EECB42908BEAE009FA5F8 /* PresetMessageTagModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetMessageTagModel.swift; sourceTree = "<group>"; };
 		C56F887C2903FB2800A389CA /* Preset-Message.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Preset-Message.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C56F887F2903FB2800A389CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C56F88812903FB2800A389CA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -227,6 +230,7 @@
 			isa = PBXGroup;
 			children = (
 				C56F88D92904103A00A389CA /* PresetMessageViewModel.swift */,
+				C56EECB42908BEAE009FA5F8 /* PresetMessageTagModel.swift */,
 				C5351B51290667D900F4475C /* Persistence */,
 				C5351B50290667B600F4475C /* Views */,
 				C5351B4F2906679400F4475C /* App */,
@@ -513,6 +517,7 @@
 				C56F88842903FB2800A389CA /* PresetTableViewController.swift in Sources */,
 				C5351B412906089F00F4475C /* Presenter.swift in Sources */,
 				C56F88D5290405AE00A389CA /* TextInputTableHeaderView.swift in Sources */,
+				C56EECB52908BEAE009FA5F8 /* PresetMessageTagModel.swift in Sources */,
 				C56F88802903FB2800A389CA /* AppDelegate.swift in Sources */,
 				C5351B4A290626B600F4475C /* PresetMessageSQL.swift in Sources */,
 				C56F88DA2904103A00A389CA /* PresetMessageViewModel.swift in Sources */,
@@ -549,6 +554,7 @@
 				C5351B4B290626C100F4475C /* PresetMessageSQL.swift in Sources */,
 				C56F88CF2903FCB700A389CA /* PresetMessageViewController.swift in Sources */,
 				C56F88D12903FCB700A389CA /* PresetMessage+UIImage.swift in Sources */,
+				C56EECB62908BEAE009FA5F8 /* PresetMessageTagModel.swift in Sources */,
 				C5351B52290668B300F4475C /* PresetMessageViewModel.swift in Sources */,
 				C5351B482906253D00F4475C /* PresetManager.swift in Sources */,
 				C56F88DF2904120400A389CA /* PresetMessageCoreData.swift in Sources */,
