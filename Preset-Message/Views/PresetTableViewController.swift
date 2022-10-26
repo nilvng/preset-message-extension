@@ -21,7 +21,6 @@ class PresetTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        navigationItem.rightBarButtonItem = editButtonItem
         navigationItem.title = "Preset Messages"
         navigationController?.navigationBar.prefersLargeTitles = true
 
@@ -33,18 +32,12 @@ class PresetTableViewController: UITableViewController {
     }
     
     func populateData(){
-        //        self.presenter.getPresets()
+        self.presenter.getPresets()
         
-        let data = [PresetMessageViewModel.greeting,
-                    PresetMessageViewModel.brb,
-                    PresetMessageViewModel.seeyah]
-        self.items = data
-        
-        for category in categories {
-            var tagModel = PresetMessageTagModel(categoryName: category)
-            tagModel.setItems(data: data)
-            self.itemsByCategory.append(tagModel)
-        }
+//        let data = [PresetMessageViewModel.greeting,
+//                    PresetMessageViewModel.brb,
+//                    PresetMessageViewModel.seeyah]
+//        self.items = data
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -127,6 +120,13 @@ extension PresetTableViewController : PresetMessageView {
     
     func setPresets(_ presets: [PresetMessageViewModel]) {
         self.items = presets
+        
+        for category in categories {
+            var tagModel = PresetMessageTagModel(categoryName: category)
+            tagModel.setItems(data: self.items)
+            self.itemsByCategory.append(tagModel)
+        }
+        
         self.tableView.reloadData()
     }
 }
