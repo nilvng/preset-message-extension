@@ -8,6 +8,7 @@
 import Foundation
 
 enum Categories : Int {
+    case Others
     case Friend
     case Family
     case Business
@@ -20,6 +21,8 @@ enum Categories : Int {
             return "Family"
         case .Business:
             return "Business"
+        default:
+            return "Others"
         }
     }
     

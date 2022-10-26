@@ -39,6 +39,7 @@ class PresetMessageSQLStore {
             try db.create(table: "presetMessageSQL", ifNotExists: true){ t in
                 t.autoIncrementedPrimaryKey("pid")
                 t.column("text", .text).notNull()
+                t.column("category", .integer).defaults(to: 1)
             }
         }
     }

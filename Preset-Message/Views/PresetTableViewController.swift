@@ -13,7 +13,7 @@ class PresetTableViewController: UITableViewController {
     var itemsByCategory : [PresetMessageTagModel] = []
     var items : [PresetMessageViewModel] = []
     
-    var categories = [Categories.Family, Categories.Friend, Categories.Business]
+    var categories = [Categories.Others, Categories.Family, Categories.Friend, Categories.Business]
     var numRecords : [Int] = []
     
     lazy var presenter  = Presenter(store: PresetMessageSQLStore(), view: self)
@@ -35,7 +35,9 @@ class PresetTableViewController: UITableViewController {
     func populateData(){
         //        self.presenter.getPresets()
         
-        let data = [PresetMessageViewModel.greeting, PresetMessageViewModel.brb]
+        let data = [PresetMessageViewModel.greeting,
+                    PresetMessageViewModel.brb,
+                    PresetMessageViewModel.seeyah]
         self.items = data
         
         for category in categories {

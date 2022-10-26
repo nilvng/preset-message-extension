@@ -12,7 +12,11 @@ struct PresetMessageTagModel {
     var items : [PresetMessageViewModel] = []
     
     mutating func setItems(data: [PresetMessageViewModel]){
-        items = data.filter { $0.category == categoryName}
+        if categoryName == .Others {
+            items = data.filter { $0.category == categoryName || $0.category == nil }
+        } else{
+            items = data.filter { $0.category == categoryName}
+        }
         
     }
 }
