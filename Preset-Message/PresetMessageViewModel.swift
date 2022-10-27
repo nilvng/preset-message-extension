@@ -7,27 +7,6 @@
 
 import Foundation
 
-enum Categories : Int {
-    case Others
-    case Friend
-    case Family
-    case Business
-    
-    func getText() -> String {
-        switch self {
-        case .Friend:
-            return "Friend"
-        case .Family:
-            return "Family"
-        case .Business:
-            return "Business"
-        default:
-            return "Others"
-        }
-    }
-    
-}
-
 struct PresetMessageViewModel{
 
     var id : Int64?

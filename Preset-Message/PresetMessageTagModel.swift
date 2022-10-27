@@ -7,6 +7,27 @@
 
 import Foundation
 
+enum Categories : Int, CaseIterable {
+    case Others
+    case Friend
+    case Family
+    case Business
+    
+    func getText() -> String {
+        switch self {
+        case .Friend:
+            return "Friend"
+        case .Family:
+            return "Family"
+        case .Business:
+            return "Business"
+        default:
+            return "Others"
+        }
+    }
+  
+}
+
 struct PresetMessageTagModel {
     var categoryName : Categories
     var items : [PresetMessageViewModel] = []

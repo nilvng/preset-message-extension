@@ -13,7 +13,7 @@ class PresetTableViewController: UITableViewController {
     var itemsByCategory : [PresetMessageTagModel] = []
     var items : [PresetMessageViewModel] = []
     
-    var categories = [Categories.Others, Categories.Family, Categories.Friend, Categories.Business]
+    var categories = Categories.allCases
     var numRecords : [Int] = []
     
     lazy var presenter  = Presenter(store: PresetMessageSQLStore(), view: self)
@@ -78,9 +78,9 @@ class PresetTableViewController: UITableViewController {
 //- MARK: Table View Delegate
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         /// TODO: update preset
-        let m = items[indexPath.item]
+        let m = self.itemsByCategory[indexPath.section].items[indexPath.row]
         let editVC = PresetEditViewController()
-//        editVC.configure(preset: m)
+        editVC.configure(preset: m)
         editVC.delegate = self
         navigationController?.pushViewController(editVC, animated: true)
     }
@@ -120,6 +120,7 @@ extension PresetTableViewController : PresetMessageView {
     
     func setPresets(_ presets: [PresetMessageViewModel]) {
         self.items = presets
+        self.itemsByCategory = []
         
         for category in categories {
             var tagModel = PresetMessageTagModel(categoryName: category)
