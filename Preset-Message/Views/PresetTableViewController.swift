@@ -10,9 +10,10 @@ import UIKit
 class PresetTableViewController: UITableViewController {
 
     var cellID = "presetCell"
+    var newPresetTextField : UITextField?
+    
     var itemsByCategory : [PresetMessageTagModel] = []
     var items : [PresetMessageViewModel] = []
-    
     var categories = Categories.allCases
     var numRecords : [Int] = []
     
@@ -22,6 +23,9 @@ class PresetTableViewController: UITableViewController {
         super.viewDidLoad()
         
         navigationItem.title = "Preset Messages"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add,
+                                                            target: self,
+                                                            action: #selector(onClickAddPreset))
         navigationController?.navigationBar.prefersLargeTitles = true
 
         tableView.register(UITableViewCell.self,
@@ -38,6 +42,20 @@ class PresetTableViewController: UITableViewController {
 //                    PresetMessageViewModel.brb,
 //                    PresetMessageViewModel.seeyah]
 //        self.items = data
+    }
+    
+    @objc func onClickAddPreset(){
+        let addAction = UIAlertAction(title: "Add", style: .default)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        let alertController = UIAlertController(title: "New preset", message: nil, preferredStyle: .alert)
+        alertController.addAction(addAction)
+        alertController.addAction(cancelAction)
+        alertController.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
+        alertController.addTextField()
+        self.newPresetTextField = alertController.textFields![0]
+        newPresetTextField?.delegate = self
+        
+        self.present(alertController, animated: true)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -71,7 +89,6 @@ class PresetTableViewController: UITableViewController {
         cell.textLabel?.text = itemsOfCategory[indexPath.row].text
         
         cell.textLabel?.numberOfLines = -1
-//        cell.detailTextLabel?.text = items[indexPath.item].category?.rawValue ?? ""
         return cell
     }
     
@@ -87,18 +104,12 @@ class PresetTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            let p = self.items[indexPath.item]
+            let m = self.itemsByCategory[indexPath.section].items[indexPath.row]
             self.tableDelete(indexPath: indexPath)
-//            self.presenter.deletePreset(p)
+            self.presenter.deletePreset(m)
         }
     }
     
-    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        let inputView =  TextInputTableHeaderView()
-//        inputView.delegate = self
-//        return inputView
-        nil
-    }
 
 }
 
@@ -135,12 +146,27 @@ extension PresetTableViewController : PresetMessageView {
 // MARK: UI Data
 extension PresetTableViewController {
     func tableAdd(preset: PresetMessageViewModel){
-        self.items.append(preset)
+        var model : PresetMessageTagModel = PresetMessageTagModel(categoryName: .Others)
+        var index = -1
+        for (i, tagModel) in self.itemsByCategory.enumerated() {
+
+            if (preset.category == nil && tagModel.categoryName == .Others) ||
+                (tagModel.categoryName == preset.category) {
+                model = tagModel
+                index = i
+                break
+            }
+        }
+        model.items.append(preset)
+        if index > -1{
+            self.itemsByCategory.append(model)
+            self.itemsByCategory[index] = model
+        }
         tableView.reloadData()
     }
     
     func tableDelete(indexPath: IndexPath){
-        self.items.remove(at: indexPath.item)
+        self.itemsByCategory[indexPath.section].items.remove(at: indexPath.row)
         self.tableView.deleteRows(at: [indexPath], with: .automatic)
     }
 }
@@ -150,6 +176,15 @@ extension PresetTableViewController : PresetEditViewDelegate {
     func presetEdit(updatedPreset: PresetMessageViewModel) {
         self.presenter.editPreset(updatedPreset)
     }
-    
-    
+}
+
+extension PresetTableViewController : UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        if let text = textField.text{
+            self.inputCell(submitted: text)
+        }
+        textField.text = "" // clear field
+        return true
+    }
 }
